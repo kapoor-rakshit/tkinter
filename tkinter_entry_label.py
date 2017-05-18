@@ -18,6 +18,7 @@ def chk():
 user=StringVar()
 passw=StringVar()
 repassw=StringVar()
+var=StringVar()
 
 lb1=Label(top,text="Username").grid(row=4)
 t1=Entry(top,textvariable=user).grid(row=5)
@@ -31,6 +32,13 @@ t3=Entry(top,show="*",exportselection=0,textvariable=repassw).grid(row=13)
 # exportselection - text within an Entry widget, it is exported to the clipboard.To avoid this exportation, use exportselection = 0.
 # show - To make a password entry show = "*".
 # textvariable - to retrieve the current text from your entry widget,set this option to an instance of the StringVar class.
+
+label = Message(top, textvariable = var, relief = RAISED )
+var.set("Hey!? How are you doing?")
+label.grid(row=15)
+# Message()
+#Its functionality is very similar to the one provided by the Label widget, 
+#except that it can also automatically wrap the text, maintaining a given width or aspect ratio.
 
 sbt=Button(top,text="SUBMIT",command=chk).grid(row=17)
 qbt=Button(top,text="QUIT",command=top.quit).grid(row=19)
