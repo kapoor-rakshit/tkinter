@@ -58,7 +58,7 @@ scrollbar.config(command = Lb1.yview)
 
 # orient - Set orient = HORIZONTAL for a horizontal scrollbar, orient = VERTICAL for a vertical one.
 
-mb=Menubutton( top, text = "condiments",relief=RAISED)
+mb=Menubutton( top, text = "condiments",relief=RAISED,direction=LEFT)
 mb.pack()
 mb.menu  =  Menu ( mb, tearoff = 0 )
 mb["menu"]  =  mb.menu
@@ -76,6 +76,10 @@ mb.pack()
 # tearoff - Normally, a menu can be torn off, the first position (position 0) in the list of choices is occupied by the tear-off element, 
 #and the additional choices are added starting at position 1. 
 #If you set tearoff = 0, the menu will not have a tear-off feature, and choices will be added starting at position 0.
+
+# direction - Set direction = LEFT to display the menu to the left of the button; 
+#use direction = RIGHT to display the menu to the right of the button; 
+#or use direction = 'above' to place the menu above the button.
 
 #add_radiobutton( options ) - Creates a radio button menu item. and similarly many more....
 
