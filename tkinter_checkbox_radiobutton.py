@@ -6,6 +6,8 @@ top.geometry("400x400")
 def rst():
 	chkbx1.set(0)
 	chkbx2.set(0)
+	rbvr1.set(0)
+	rbvr2.set(0)
 
 def chk():
 	print("Your Interests are :")
@@ -14,6 +16,8 @@ def chk():
 	if chkbx2.get()==1:
 		print("Distributed Systems")
 	print("\n")
+	result="Gender is : "+rbvr1.get()+"\n"+"Grade is : "+str(rbvr2.get())
+	print(result)
 
 chkbx1=IntVar()
 chkbx2=IntVar()
@@ -36,6 +40,25 @@ sbt=Button(top,text="SUBMIT",command=chk).grid(row=7,sticky=W)           # Check
 rbt=Button(top,text="Reset",command=rst).grid(row=9)
 # the widgets are centered in their cells. 
 # You can use the STICKY option to change this; this option takes one or more values from the set N, S, E, W.
+
+rbvr1=StringVar()
+rbvr2=IntVar()
+
+rb11=Radiobutton(top,text="Male",variable=rbvr1,value="Male").grid(row=13)
+rb12=Radiobutton(top,text="Female",variable=rbvr1,value="Female").grid(row=14)
+rb13=Radiobutton(top,text="Other",variable=rbvr1,value="Other").grid(row=15)
+
+rb21=Radiobutton(top,text="S",variable=rbvr2,value=10).grid(row=17)
+rb22=Radiobutton(top,text="A",variable=rbvr2,value=9).grid(row=19)
+rb23=Radiobutton(top,text="B",variable=rbvr2,value=8).grid(row=21)
+rb24=Radiobutton(top,text="C",variable=rbvr2,value=7).grid(row=23)
+
+# value - When a radiobutton is turned on by the user, its control variable is set to its current value option. 
+#If the control variable is an IntVar, give each radiobutton in the group a different integer value option. 
+#If the control variable is a StringVar, give each radiobutton a different string value option.
+
+# variable - The control variable that this radiobutton shares with the other radiobuttons in the group. 
+#This can be either an IntVar or a StringVar.
 
 #cbx1.place(x=100,y=150)
 #cbx2.place(x=200,y=250)
